@@ -35,3 +35,40 @@ for value in person.values():          # values
 
 for key, value in person.items():      # key-value pairs
     print(key, "=", value)
+
+# enumerate: get index + value
+colors = ["red", "green", "blue"]
+for index, color in enumerate(colors):
+    print(index, color)
+
+# Start index at 1
+for i, color in enumerate(colors, start=1):
+    print(i, color)
+
+# zip: iterate two (or more) sequences in parallel
+names = ["Alice", "Bob", "Carol"]
+scores = [85, 92, 78]
+for name, score in zip(names, scores):
+    print(f"{name}: {score}")
+
+    # Basic while
+count = 0
+while count < 5:
+    print(count)
+    count += 1
+
+# while with user-like condition
+total = 0
+n = 10
+while n > 0:
+    total += n
+    n -= 1
+print("Sum:", total)     # 55
+
+# while True (infinite loop, exits with break)
+secret = "python"
+while True:
+    guess = input("Guess the word: ")
+    if guess == secret:
+        print("Correct!")
+        break
