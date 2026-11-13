@@ -129,3 +129,32 @@ squares = []
 for x in range(1, 6):
     squares.append(x * x)
 print(squares)                # [1, 4, 9, 16, 25]
+
+# List comprehension
+squares = [x * x for x in range(1, 6)]        # [1, 4, 9, 16, 25]
+
+# With a condition
+evens = [x for x in range(10) if x % 2 == 0]  # [0, 2, 4, 6, 8]
+
+# Dict comprehension
+lengths = {w: len(w) for w in ["hi", "hello", "hey"]}
+# {'hi': 2, 'hello': 5, 'hey': 3}
+
+# Set comprehension
+unique = {x % 3 for x in range(10)}           # {0, 1, 2}
+
+for x in reversed([1, 2, 3]):
+    print(x)          # 3 2 1
+
+for name in sorted(["Charlie", "Alice", "Bob"]):
+    print(name)       # Alice Bob Charlie
+
+    # DON'T do this (skips elements)
+nums = [1, 2, 3, 4]
+for n in nums:
+    if n % 2 == 0:
+        nums.remove(n)    # unreliable!
+
+# DO this instead — iterate over a copy, or build a new list
+nums = [1, 2, 3, 4]
+nums = [n for n in nums if n % 2 != 0]   # [1, 3]
